@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+int numero, opcaoDesejada, simNao, perto;
+printf("Pense em um numero de 1 a 99 e o digite, tentaremos adivinhar qual foi\n");
+scanf("%d", &numero); srand(time(NULL));
+int numeroAleatorio =  (rand() % 100);
+if(numero >=1 && numero<=99) {
+printf("O numero que voce penseo e: %d?\n",
+numeroAleatorio); printf("1 - sim\n 2 - nao\n");
+scanf("%d", &simNao); if(simNao == 1) { opcaoDesejada = 3;
+} 
+printf("1 -O numero esta perto de 25?\n 2 - o numero esta perto de 50?\n 3 - o numero esta perto de 75?\n\n");
+scanf("%d", &perto);
+switch (perto){ case 1: numeroAleatorio = 25;
+break;
+case 2: numeroAleatorio = 50;
+break;
+case 3: numeroAleatorio = 75;
+break;
+default: printf("Opcao inexistente");
+}
+while (opcaoDesejada != 3){
+printf(" 1 - O numero e maior\n 2 - O numero e menor\n 3 - Voce acertou!!!\n\n\n");
+printf("O numero e %d??\n\n", numeroAleatorio);
+scanf("%d", &opcaoDesejada);
+switch (opcaoDesejada) { 
+case 1: numeroAleatorio++;
+break;
+case 2: numeroAleatorio--;
+break;
+case 3: printf("\n\n\nFINALMENTE CONSEGUI :)");
+break;
+default: printf("Opcao invalida");
+}
+}
+} else {printf("O numero escolhido invalido");
+} 
+return 0;
+}
+'
+1- Para fazer o programa tive que importa uma biblioteca de numeros aleatorio "<stdlib.h>" e uma de horas "<time.h>". 
+2 -Primeiro tive que printa para que escolha um numero aleatorio e terei de acertar por meio de swith e case 
+3 -peguei o numero que o usuario escolhei na variavel "numero" e ultilizei um if para saber se o codigo pode prosseguir se o numero escolhido estiver entre 100 e 0 
+4 -depois ultilazando a biblioteca "tddlib.h" junto da "time.h" gerei um numero aleatorio e guardei a mesma na variavel "numeroAleatorio" e printei para o usuario ve 
+5 -logo apos gerei um printe perguntando se esse numero e o do usuario 
+6 -ultilizando um IF que se a resposta fosse sim o  codigo quebraria e geraria uma mensagem "FINALMENTE CONSEGUI 
+7 - se a resposta for nao o programa ia printa uma pergunta usando um swith/case de onde o numero mais se aproxima com "25", "50", "75". Dependo da resposta o int numeroAleatorio ganhara seu valor e prossiguira com outras perguntas 
+8 - sabendo de onde o numero mais se aproxima eu criei um loop usando WHILE, que enquanto o usario nao selecionar a opcao 3 - voce acerto ficar repetindo o codigo infinitamente.. 
+9 - criei um print dentro do loop pergunta se o numero era menor, maior, ou se era o numero que o usario digitou 
+10 - a cada opção escolhida o int numeroAleatorio aumentaria 1, ou diminuiria 1. 
+11 - caso o usuario digite a opção 3 (Opção de que o numero  que apareceu e  o dele) como dito antes o programa printara "FINAMENTE CONSEGUI' e terminara o loop 
+
+EXPLICACAO DAS BIBLIOTECAS ULTILIZADAS NO PASSO "-4" eu usei a função  srand(time(NULL));
+porque a o gerar numeros aleatorios com rand os numero sempre serão o mesmo, nisso precisamos aleatorizar eles com a biblioteca time eu pego um numero da hora do sistema para o rand gerar um numero aleatorio eu guardei na variavel numeroAleatorio o numero que o programa gerou aleatoriamente e coloque o "% 100" para ele gerar de 1 a 100 int 
+numeroAleatorio =  (rand() % 100);
