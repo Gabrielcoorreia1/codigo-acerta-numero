@@ -2,42 +2,73 @@
 #include <stdlib.h>
 #include <time.h>
 int main() {
-int numero, opcaoDesejada, simNao, perto;
-printf("Pense em um numero de 1 a 99 e o digite, tentaremos adivinhar qual foi\n");
-scanf("%d", &numero); srand(time(NULL));
-int numeroAleatorio =  (rand() % 100);
-if(numero >=1 && numero<=99) {
-printf("O numero que voce penseo e: %d?\n",
-numeroAleatorio); printf("1 - sim\n 2 - nao\n");
-scanf("%d", &simNao); if(simNao == 1) { opcaoDesejada = 3;
-} 
-printf("1 -O numero esta perto de 25?\n 2 - o numero esta perto de 50?\n 3 - o numero esta perto de 75?\n\n");
-scanf("%d", &perto);
-switch (perto){ case 1: numeroAleatorio = 25;
-break;
-case 2: numeroAleatorio = 50;
-break;
-case 3: numeroAleatorio = 75;
-break;
-default: printf("Opcao inexistente");
-}
-while (opcaoDesejada != 3){
-printf(" 1 - O numero e maior\n 2 - O numero e menor\n 3 - Voce acertou!!!\n\n\n");
-printf("O numero e %d??\n\n", numeroAleatorio);
-scanf("%d", &opcaoDesejada);
-switch (opcaoDesejada) { 
-case 1: numeroAleatorio++;
-break;
-case 2: numeroAleatorio--;
-break;
-case 3: printf("\n\n\nFINALMENTE CONSEGUI :)");
-break;
-default: printf("Opcao invalida");
-}
-}
-} else {printf("O numero escolhido invalido");
-} 
-return 0;
+
+  int numero,
+  opcaoDesejada,
+  simNao,
+  perto;
+
+
+  printf("Pense em um numero de 1 a 99 e o digite, tentaremos adivinhar qual foi\n");
+  scanf("%d", &numero);
+
+
+  srand(
+    time(NULL)
+  );
+  int
+  numeroAleatorio = (rand()% 100);
+
+
+  if(numero > = 1 && numero < = 99) {
+    printf("O numero que voce penseo e: %d?\n", numeroAleatorio);
+
+    printf("1 - sim\n 2 - nao\n");
+    scanf("%d", &simNao);
+
+    if(simNao = = 1) {
+      opcaoDesejada = 3;
+    }
+
+
+    printf("1 -O numero esta perto de 25?\n 2 - o numero esta perto de 50?\n 3 - o numero esta perto de 75?\n\n");
+    scanf("%d", &perto);
+
+    switch(perto) {
+      case
+      1: numeroAleatorio= 25;
+      break;
+      case
+      2: numeroAleatorio= 50;
+      break;
+      case
+      3: numeroAleatorio= 75;
+      break;
+      default: printf("Opcao inexistente");
+    }
+
+    while(opcaoDesejada ! = 3) {
+      printf(" 1 - O numero e maior\n 2 - O numero e menor\n 3 - Voce acertou!!!\n\n\n");
+      printf("O numero e %d??\n\n", numeroAleatorio);
+      scanf("%d", &opcaoDesejada);
+      switch(opcaoDesejada) {
+        case
+        1: numeroAleatorio++;
+        break;
+        case
+        2: numeroAleatorio--;
+        break;
+        case
+        3: printf("\n\n\nFINALMENTE CONSEGUI :)");
+        break;
+        default: printf("Opcao invalida");
+      }
+    }
+  }
+  else {
+    printf("O numero escolhido invalido");
+  }
+  return 0;
 }
 '
 1- Para fazer o programa tive que importa uma biblioteca de numeros aleatorio "<stdlib.h>" e uma de horas "<time.h>". 
